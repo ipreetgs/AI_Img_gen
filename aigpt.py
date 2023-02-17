@@ -1,28 +1,24 @@
 import openai
 import os
+import requests
 import sys
 
 img=sys.argv[1]
 
 # for i, arg in enumerate(sys.argv[1:]):
     
-openai.api_key_path = 'apikey'
-# response = openai.Image.create(
-  # prompt="a white siamese cat",
-  # n=1,
-  # size="1024x1024"
-# )
-# image_url = response['data'][0]['url']
-
-# a=openai.Model.list()
-# print(a)
+openai.api_key_path = '/Apikey.txt'
 
 resp=openai.Image.create(prompt=img,n=1,size="256x256")
 
-image_url = response['data'][0]['url']
+image_url = resp['data'][0]['url']
 
-os.popen(f'wget {image_url}>1.png')
 
-os.popen('sudo rm -rf /var/www/html/1.png')
-os.popen('sudo mv 1.png /var/www/html/')
+
+img_data = requests.get(image_url).content
+with open('Out.jpeg', 'wb') as handler:
+    handler.write(img_data)
+
+os.popen('sudo rm -rf /var/www/html/Out.jpeg')
+os.popen('sudo mv Out.jpeg /var/www/html/')
 
