@@ -3,6 +3,9 @@ import os
 import sys
 
 img=sys.argv[1]
+
+# for i, arg in enumerate(sys.argv[1:]):
+    
 openai.api_key_path = 'apikey'
 # response = openai.Image.create(
   # prompt="a white siamese cat",

@@ -10,7 +10,7 @@ pipeline{
     stages {
         stage('Git checkout') {
            steps{
-                git branch: 'main', credentialsId: 'Github_tx_Creds', url: 'https://github.com/igurpreetsinghi/jenkinspipeline-aws.git'
+                git branch: 'main', credentialsId: 'Github_tx_Creds', url: 'https://github.com/ipreetgs/AI_Img_gen.git'
             }
         }
         stage('RUN'){
