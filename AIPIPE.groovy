@@ -15,6 +15,7 @@ pipeline{
         }
         stage('RUN'){
             steps{
+                sh "chmod +x -R ${env.WORKSPACE}"
                 echo "hello"
                 sh 'python3 AIMV.py '
             }
