@@ -3,6 +3,9 @@ pipeline{
     tools {
         git 'Default'
     }
+   parameters {
+        string(name: 'img', defaultValue: 'white Cat sitting on table', description: 'Enter Image you want to Create')
+    }
 
     stages {
         stage('Git checkout') {
