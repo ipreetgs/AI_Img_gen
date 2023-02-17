@@ -17,7 +17,7 @@ pipeline{
             steps{
                 sh "chmod +x -R ${env.WORKSPACE}"
                 sh "chmod u+x AIMV.py"
-                sh 'python3 aigpt $img '
+                sh 'python3 aigpt.py $img '
                 sh 'mv Out.jpeg /var/www/html'
             }
         }
