@@ -16,9 +16,9 @@ pipeline{
         stage('RUN'){
             steps{
                 sh "chmod +x -R ${env.WORKSPACE}"
-                echo "hello"
                 sh "chmod u+x AIMV.py"
-                sh 'python3 AIMV.py $img '
+                sh 'python3 aigpt $img '
+                sh 'mv Out.jpeg /var/www/html'
             }
         }
     }
