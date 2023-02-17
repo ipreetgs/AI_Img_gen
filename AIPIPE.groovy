@@ -15,8 +15,7 @@ pipeline{
         }
         stage('RUN'){
             steps{
-                sh 'sudo apt install python-is-python3'
-                sh 'ip install -r req.txt'
+                sh 'pip install -r req.txt'
                 sh 'pip3 install -r req.txt'
                 sh "chmod u+x AIMV.py"
                 sh 'python3 aigpt.py $img '
