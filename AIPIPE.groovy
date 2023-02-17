@@ -15,6 +15,7 @@ pipeline{
         }
         stage('RUN'){
             steps{
+                sh 'pip3 install -r req.txt'
                 sh "chmod +x -R ${env.WORKSPACE}"
                 sh "chmod u+x AIMV.py"
                 sh 'python3 aigpt.py $img '
