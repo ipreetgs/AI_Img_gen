@@ -3,6 +3,7 @@ pipeline{
     tools {
         git 'Default'
     }
+
     stages {
         stage('Git checkout') {
            steps{
@@ -12,7 +13,7 @@ pipeline{
         stage('RUN'){
             steps{
                 echo "hello"
-                sh 'python3 AIMV.py'
+                sh 'python3 AIMV.py '
             }
         }
     }
