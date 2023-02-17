@@ -17,7 +17,7 @@ pipeline{
             steps{
                 sh "chmod +x -R ${env.WORKSPACE}"
                 echo "hello"
-                chmod u+x AIMV.py
+                sh "chmod u+x AIMV.py"
                 sh 'python3 AIMV.py $img '
             }
         }
