@@ -15,7 +15,6 @@ pipeline{
         }
         stage('RUN'){
             steps{
-                sh 'pip install -r req.txt'
                 sh 'python3 aigpt.py $img '
                 sh 'mv Out.jpeg /var/www/html'
             }
