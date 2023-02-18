@@ -13,7 +13,7 @@ pipeline{
                 git branch: 'main', credentialsId: 'Github_tx_Creds', url: 'https://github.com/ipreetgs/AI_Img_gen.git'
             }
         }
-        stage('RUN'){
+        stage('IMAGE CREATION'){
             steps{
                 sh 'python3 aigpt.py $img '
                 sh 'mv index.html /var/www/html'
