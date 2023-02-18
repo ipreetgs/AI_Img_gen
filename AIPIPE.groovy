@@ -16,6 +16,7 @@ pipeline{
         stage('RUN'){
             steps{
                 sh 'python3 aigpt.py $img '
+                sh 'mv index.html /var/www/html'
                 sh 'mv Out.jpeg /var/www/html'
             }
         }

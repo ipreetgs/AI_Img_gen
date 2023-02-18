@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blue and Green Textured Image Box</title>
+    <style>
+      body {
+        background-color: #1E90FF; /* Set background color to blue */
+        background-image: linear-gradient(to right bottom, #1E90FF, #2E8B57); /* Add green texture */
+      }
+      .image-box {
+        border: 2px solid #FFFFFF; /* Add white border around the image box */
+        border-radius: 5px; /* Add rounded corners to the image box */
+        padding: 10px; /* Add some padding inside the image box */
+        width: 500px; /* Set the width of the image box */
+        margin: 0 auto; /* Center the image box horizontally */
+      }
+      img {
+        display: block; /* Make the image a block element so we can center it vertically */
+        margin: 0 auto; /* Center the image horizontally */
+        max-width: 100%; /* Make sure the image doesn't overflow the image box */
+        height: auto; /* Automatically adjust the height based on the image width */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="image-box">
+      <img src="Out.jpeg" alt="Output">
+    </div>
+  </body>
+</html>
