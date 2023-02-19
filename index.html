@@ -1,14 +1,53 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>AI IMAGE CREATED</title>
-    <style>
-      body {
-        background-color: #1F1F1F; /* Set the background color to a dark gray */
-        font-family: Arial, sans-serif; /* Change the font for the page */
-        background-image: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.4) 100%), repeating-linear-gradient(45deg, #000, #000 10px, #fff 10px, #fff 20px); /* Add a mesh-like background pattern */
-      }
-      .image-box {
+<head>
+	<title>Stylish Box with Moving Lines Pattern Background</title>
+	<style>
+		body {
+			background-color: #E6E6FA;
+			background-image: linear-gradient(to bottom right, #FF69B4, #87CEEB);
+			background-attachment: fixed;
+			background-size: cover;
+		}
+
+		.container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			margin: 50px auto;
+			padding: 20px;
+			width: 400px;
+			height: 500px;
+			border-radius: 10px;
+			box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+			background-color: #fff;
+			position: relative;
+			overflow: hidden;
+		}
+		.container::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+			opacity: 0.7;
+			transform: skewY(-12deg) translateX(-100%);
+		}
+		.container::after {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+			opacity: 0.7;
+			transform: skewX(-12deg) translateY(-100%);
+		}
+        .image-box {
         background-color: #F2F2F2; /* Set the background color of the image box */
         border: 2px solid #CCCCCC; /* Add a light gray border around the image box */
         border-radius: 10px; /* Add rounded corners to the image box */
@@ -17,7 +56,13 @@
         width: 600px; /* Set the width of the image box */
         margin: 50px auto; /* Center the image box horizontally and add some space above and below */
       }
-      img {
+        img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+        transition: all 0.3s ease-in-out;
         display: block; /* Make the image a block element so we can center it vertically */
         margin: 0 auto; /* Center the image horizontally */
         max-width: 100%; /* Make sure the image doesn't overflow the image box */
@@ -25,18 +70,76 @@
         border-radius: 10px; /* Add rounded corners to the image */
         box-shadow: 0px 0px 20px rgba(0,0,0,0.5); /* Add a shadow to the image */
       }
-      h1 {
+		img:hover {
+			transform: scale(1.05);
+			box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+		}
+        h1 {
+        background-color: #f2f2f3;
+        border: 2px solid #CCCCCC; /* Add a light gray border around the image box */
+        border-radius: 10px; /* Add rounded corners to the image box */
+        box-shadow: 0px 0px 20px rgba(0,0,0,0.5); /* Add a shadow to the image box */
+        padding: 10px; /* Add some padding inside the image box */
+        width: 500px; /* Set the width of the image box */
+        margin: 40px auto;
         text-align: center; /* Center the heading */
-        color: #FFFFFF; /* Set the text color to white */
+        color: #1e258b; /* Set the text color to white */
         text-shadow: 1px 1px 2px rgba(0,0,0,0.5); /* Add a shadow to the heading */
         margin-top: 50px; /* Add some space above the heading */
       }
-    </style>
-  </head>
-  <body>
+		button {
+			background-color: #FF69B4;
+			color: #fff;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			font-size: 1.2rem;
+			cursor: pointer;
+			transition: all 0.3s ease-in-out;
+			position: absolute;
+			bottom: 20px;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		button:hover {
+			background-color: #87CEEB;
+		}
+		.congrats-msg {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background-color: #fff;
+			padding: 20px;
+			border-radius: 5px;
+			box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+			z-index: 10;
+			display: none;
+		}
+		.congrats-msg.show {
+			opacity: 
+
+	</style>
+</head>
+<body>
     <h1>IMAGE OUTPUT</h1>
-    <div class="image-box">
-      <img src="Out.jpeg" alt="Your Image">
-    </div>
-  </body>
+	<div class="container">
+        
+		<img src="Out.jpeg" alt="Example Image">
+		<button onclick="showCongrats()">I like it!</button>
+		<p id="congrats-msg" style="display:none; color:#FF69B4; font-size:1.2rem;">Congratulations!</p>
+	</div>
+
+	<script>
+		function showCongrats() {
+			// Show the congratulations message
+			document.getElementById("congrats-msg").style.display = "block";
+
+			// Set a timeout to hide the message after 2 seconds (2000 milliseconds)
+			setTimeout(function() {
+				document.getElementById("congrats-msg").style.display = "none";
+			}, 2000);
+		}
+	</script>
+</body>
 </html>
