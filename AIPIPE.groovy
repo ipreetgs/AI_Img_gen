@@ -20,5 +20,13 @@ pipeline{
                 sh 'mv Out.jpeg /var/www/html/'
             }
         }
+        stage('Open webpage') {
+            steps {
+                script {
+                    def url = 'http://18.215.63.72/' // Replace with your desired URL
+                    openURL(url)
+                }
+            }
+        }
     }
 }
