@@ -18,6 +18,7 @@ pipeline{
                 sh 'python3 aigpt.py $img '
                 sh 'mv index.html /var/www/html'
                 sh 'mv Out.jpeg /var/www/html/'
+                sh 'mv logo.png /var/www/html/'
             }
         }
         stage('Open webpage') {
