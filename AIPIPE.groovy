@@ -24,8 +24,7 @@ pipeline{
         stage('Open webpage') {
             steps {
                 script {
-                    def url = 'http://18.215.63.72/' // Replace with your desired URL
-                    openURL(url)
+                    'start http://18.215.63.72'
                 }
             }
         }
