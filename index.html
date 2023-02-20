@@ -99,10 +99,24 @@
 			position: absolute;
 			bottom: 20px;
 			left: 50%;
-			transform: translateX(-50%);
+			transform: translateX(-100%);
 		}
 		button:hover {
 			background-color: #87CEEB;
+		}
+		.dislike-btn {
+			background-color: #bc4732;
+			color: #fff;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			font-size: 1.2rem;
+			cursor: pointer;
+			transition: all 0.3s ease-in-out;
+			position: absolute;
+			bottom: 20px;
+			left: 50%;
+			transform: translateX(30%);
 		}
 		.congrats-msg {
 			position: absolute;
@@ -116,6 +130,12 @@
 			z-index: 10;
 			display: none;
 		}
+		
+
+		.dislike-btn:hover {
+			background-color: #CD5C5C;
+		}
+
 		.congrats-msg.show {
 			opacity: 
 		footer {
@@ -165,7 +185,9 @@
 	<div class="container">
         
 		<img src="Out.jpeg" alt="Image">
-		<button onclick="showCongrats()">I like it!</button>
+		<button onclick="showCongrats()">I like it!😍</button>
+		<button class="dislike-btn">I don't like it😒</button>
+
 		<p id="congrats-msg" style="display:none; color:#FF69B4; font-size:1.2rem;">Thank you!Human</p>
 	</div>
 
