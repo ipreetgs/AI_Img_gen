@@ -4,8 +4,8 @@ pipeline{
         git 'Default'
     }
    parameters {
-        choice(name: 'AIfor ', choices: ['ImageGeneration', 'TextComplition','Write'], description: 'Select AI usecase') 
-        string(name: 'img', defaultValue: 'white Cat sitting on table', description: 'Enter Image you want to Create')
+        choice(name: 'AIfor', choices: ['ImageGeneration', 'TextComplition','Write'], description: 'Select AI usecase') 
+        string(name: 'img', defaultValue: 'white Cat sitting on table', description: 'Type USE Case')
     }
     stages {
         stage('Git checkout') {
