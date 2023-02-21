@@ -4,7 +4,7 @@ pipeline{
         git 'Default'
     }
    parameters {
-        choice(name: 'AI for ', choices: ['ImageGeneration', 'TextComplition','Write'], description: 'Select AI usecase') 
+        choice(name: 'AIfor ', choices: ['ImageGeneration', 'TextComplition','Write'], description: 'Select AI usecase') 
         string(name: 'img', defaultValue: 'white Cat sitting on table', description: 'Enter Image you want to Create')
     }
     stages {
@@ -16,15 +16,15 @@ pipeline{
         stage(' Genarating !!') {
             steps{
                 script{
-                    if (params.Services == 'ImageGeneration') {
+                    if (params.AIfor == 'ImageGeneration') {
                         sh 'python3 aigpt.py $img '
                         sh 'mv index.html /var/www/html'
                         sh 'mv Out.jpeg /var/www/html/'
                         // sh 'mv logo.png /var/www/html/'
 
-                    } else if (params.Services == 'TextComplition') {
+                    } else if (params.AIfor == 'TextComplition') {
                         echo "Wait for input."
-                    } else if (params.Services == 'Write') {
+                    } else if (params.AIfor == 'Write') {
                         echo "you are not to proceed."
                     } else {
                         echo "Error"
