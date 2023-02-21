@@ -5,6 +5,7 @@ pipeline{
     }
    parameters {
         choice(name: 'AI for ', choices: ['ImageGeneration', 'TextComplition','Write'], description: 'Select AI usecase') 
+        string(name: 'img', defaultValue: 'white Cat sitting on table', description: 'Enter Image you want to Create')
     }
     stages {
         stage('Git checkout') {
