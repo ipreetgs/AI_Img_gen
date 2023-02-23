@@ -4,7 +4,7 @@ pipeline{
         git 'Default'
     }
    parameters {
-        choice(name: 'AIfor', choices: ['ImageGeneration', 'TextComplition','Write'], description: 'Select AI usecase') 
+        choice(name: 'AIfor', choices: ['ImageGeneration', 'TextComplition','WriteParagraph'], description: 'Select AI usecase') 
         string(name: 'img', defaultValue: 'white Cat sitting on table', description: 'Type USE Case')
     }
     stages {
@@ -23,9 +23,13 @@ pipeline{
                         // sh 'mv logo.png /var/www/html/'
 
                     } else if (params.AIfor == 'TextComplition') {
+                        sh 'python3 aiText.py $img>Out.txt'
+                        sh 'mv Out.jpeg /var/www/html/'
                         echo "Wait for input."
-                    } else if (params.AIfor == 'Write') {
+                    } else if (params.AIfor == 'WriteParagraph') {
                         echo "you are not to proceed."
+                        sh 'python3 AiWriter.py $img>Out.txt'
+                        sh 'mv Out.jpeg /var/www/html/'
                     } else {
                         echo "Error"
                     }
